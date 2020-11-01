@@ -1,0 +1,142 @@
+body {
+	overflow-x: hidden;
+}
+
+.progressIconActive {
+	color: #fff;
+	position: relative;
+	z-index: 5;
+	width: 40px;
+	height: 40px;
+	background-color: #3f70e2;
+	border: solid 3px #3f70e2;
+	border-radius: 50%;
+	border-color: #3f70e2;
+}
+.DateInput_input__focused {
+	border-bottom: 2px solid  #28cc8b !important;
+}
+.DateInput {
+	width: 105px !important;
+}
+.DateInput_input {
+	font-size: 16px !important;
+}
+.DateRangePickerInput__showClearDates {
+	padding-right: 27px !important;
+}
+.DateRangePickerInput_clearDates {
+	top: 47% !important;
+	padding: 6px !important;
+	margin: 0 10px !important;
+}
+.DateRangePickerInput_arrow {
+	position: relative;
+}
+.DateRangePicker_picker__fullScreenPortal {
+	z-index: 100 !important;
+}
+.DateRangePicker_closeButton {
+	top: 3% !important;
+	right: 2% !important;
+}
+.filepond--image-preview-overlay-idle {
+	color: transparent !important;
+}
+.DayPickerNavigation_button__verticalDefault {
+	height: auto !important;
+}
+@media screen and (max-width: 1065px) {
+	.filepond--root {
+		height: 300px !important;
+	}
+	.filepond--list-scroller {
+		overflow-y: auto !important;
+	}
+	.filepond--item {
+		height: 300px !important;
+		width: calc(50% - 0.5em);
+		margin: 0 auto !important;
+	}
+}
+.filepond--drop-label {
+	background-color: #e9ebef;
+	border-radius: 5px;
+}
+@media screen and (max-width: 769px) {
+	.filepond--item {
+		width: 100%;
+		height: 100% !important;
+		margin: 0 auto !important;
+	}
+	.filepond--drop-label {
+		margin: 105px auto !important;
+		width: 80%;
+	}
+	.DateRangePickerInput__showClearDates {
+		padding-right: 0 !important;
+	}
+	.DateRangePickerInput {
+		width: 100%;
+	}
+	.DateRangePicker {
+		width: 100%;
+	}
+}
+.filepond--file-action-button {
+	cursor: pointer;
+}
+.filepond--file-poster-wrapper {
+	z-index: 2;
+}
+.filepond--panel .filepond--item-panel {
+	display: none !important;
+}
+.filepond--file-info {
+	visibility: hidden;
+}
+.filepond--file-poster-overlay {
+	display: none;
+}
+.filepond--file-poster-wrapper {
+	pointer-events: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	height: 100%;
+	margin: 0;
+	border-radius: 0.45em;
+	overflow: hidden;
+	background: rgba(0, 0, 0, 0.01);
+}
+.filepond--image-preview {
+	background: transparent !important;
+}
+.filepond--image-clip {
+	opacity: 1;
+	height: 225px;
+	width: 225px;
+}
+.filepond--file {
+	color: black !important;
+}
+.filepond--file-poster {
+	position: relative;
+	z-index: 1;
+	display: block;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	-webkit-transform-origin: center center;
+	transform-origin: center center;
+	background: transparent;
+	will-change: transform, opacity;
+}
+.filepond--file-poster img {
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	will-change: transform;
+}
