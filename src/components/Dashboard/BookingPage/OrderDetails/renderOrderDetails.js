@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useRef} from "react";
 import _ from "underscore";
 import Grid from "@material-ui/core/Grid";
 import { DatePicker } from "./Fields/DateRangePiker";
@@ -12,7 +12,8 @@ const RenderFunction = (
 	classes,
 	additionalNote,
 	handleSetData,
-	handleAddNote
+	handleAddNote,
+    endDateRef
 ) => {
 	const ORDER_DETAILS = "orderDetails";
 	const datesCallback = (dates) =>
@@ -29,7 +30,25 @@ const RenderFunction = (
 	// useEffect(()=>{
 	//
 	// });
+    const dropDownChange = () => {
+    	// autoFocusEndHour = true;
+        console.log(endDateRef)
+        endDateRef.current.focus()
+    	console.log("dropDownChange")
+    	//setTimeout(() => {input.focus()}, 100);
+	};
 
+    const focusEndHourInputField = input => {
+		console.log("focusEndHourInputField");
+		console.log(input);
+		if (input) {
+			setTimeout(() => {
+				console.log('focus() timeout')
+				input.focus()}, 100);
+		}
+
+
+	};
 
 	return _.map(bookingInfo, (item, i) => {
 		const itemOrder = item.orderDetails;
@@ -63,6 +82,8 @@ const RenderFunction = (
 								chosenEndHour={itemOrder.endHour}
 								hoursCallback={hoursCallback}
 								classesRoot={classes.hoursInput}
+								dropDownChange={dropDownChange}
+
 							/>
 							<TimePickerDropDown
 								classes={classes}
@@ -76,6 +97,10 @@ const RenderFunction = (
 								chosenStartHour={itemOrder.startHour}
 								hoursCallback={hoursCallback}
 								classesRoot={classes.hoursInput}
+								// autoFocusEndHour={()=>{}}
+								refInput={endDateRef}
+
+
 							/>
 						</Grid>
 						<Grid

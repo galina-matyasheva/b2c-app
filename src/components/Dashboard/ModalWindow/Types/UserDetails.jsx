@@ -112,11 +112,19 @@ export const UserDetails = ({
 					return (
 						<Autocomplete
 							onChange={(e, value) => {
-								setCountryValue(value.value);
-								handleOnChangeField({
-									value: value.name,
-									handle: item.handle,
-								});
+								if(value) {
+									setCountryValue(value.value);
+									handleOnChangeField({
+										value: value.name,
+										handle: item.handle,
+									});
+								} else {
+									setCountryValue('');
+									handleOnChangeField({
+										value: '',
+										handle: item.handle,
+									});
+								}
 							}}
 							freeSolo={false}
 							defaultValue={"Germany"}

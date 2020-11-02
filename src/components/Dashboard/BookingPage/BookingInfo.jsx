@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment } from "react";
+import React, {useState, useEffect, Fragment, useRef} from "react";
 import { useHistory } from "react-router-dom";
 import { withStyles } from "@material-ui/core/styles";
 import DehazeOutlinedIcon from "@material-ui/icons/DehazeOutlined";
@@ -55,6 +55,8 @@ export const BookingPage = (props) => {
 		setBookingInfo([...newData]);
 		store.setBookingData([...newData]);
 	};
+	const endDateRef = useRef(null)
+
 	const handleAddNote = (value) => setNote(value);
 	useEffect(() => {
 		setBookingInfo([_.find(store.bookingData, (info) => info.id === id) ?? []]);
@@ -136,7 +138,8 @@ export const BookingPage = (props) => {
 							classes,
 							additionalNote,
 							handleSetData,
-							handleAddNote
+							handleAddNote,
+							endDateRef
 						)}
 						{
 							<RenderUserDetails

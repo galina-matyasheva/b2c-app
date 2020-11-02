@@ -29,6 +29,10 @@ export const AmountField = ({
 		const endDate = dateTimeSet.endDate;
 		const startHour = moment(dateTimeSet.startHour, "HH:mm");
 		const endHour = moment(dateTimeSet.endHour, "HH:mm");
+
+		if (!startDate || !endDate || !startHour || !endHour) {
+			return 0;
+		}
 		const hourlyAmount = amount.hourly;
 		const dailyAmount = amount.daily;
 		let differenceDays = moment(endDate).diff(startDate, "days");
